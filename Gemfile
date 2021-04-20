@@ -92,4 +92,7 @@ gem "jquery-rails", "~> 4.4"
 
 gem 'font-awesome-sass', '~> 4.7.0'
 
-gem 'bootstrap', '~> 4.4.1'
+# gem 'bootstrap', '~> 4.4.1'
+
+gem 'turbolinks', '~> 5'
+gem 'bootstrap-sass', '~> 3.4.1'
