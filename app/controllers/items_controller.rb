@@ -5,15 +5,21 @@ class ItemsController < ApplicationController
     end
     
     def new
-        @item_params = params.require(:addItem).permit(:person, :name, :amount, :price, :comment, :order)
-        @item = Item.new(item_params)
-        @item.order = params[:id]
+        @order = Order.where(id: params[:id]).first
+        @item = Item.new
+    end
+
+    def create
+        @item_params = params.require(:newItem).permit(:name, :amount, :price, :comment, :user_id)
+        @item = Item.new(@item_params)
+        @item.order_id = params[:id]
+        @item.user_id = current_user.id
         if (@item.save)
-          @items = Item.where(order: params[:id])
-          render 'index'
+            @order = Order.where(id: params[:id]).first
+            @items = Item.where(order: params[:id])
+            render 'index'
         else
-          @items = Item.where(order: params[:id])
-          render 'index'
+            render 'new'
         end
     end
 end

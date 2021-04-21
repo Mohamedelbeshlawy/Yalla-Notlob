@@ -1,9 +1,9 @@
 class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
-      t.string :meal_type
+      t.integer :meal_type
       t.string :restaurant_name
-      t.string :order_status
+      t.integer :order_status
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :friends
   resources :orders
-  
   root to: "home#index"
   
   get '/friends/:id/accept', to: 'friends#accept'
@@ -15,7 +14,8 @@ Rails.application.routes.draw do
   post '/orders/:id/cancel', to: 'orders#cancel', as: 'cancelOrder'
   post '/orders/:id/finish', to: 'orders#finish', as: 'finishOrder'
 
-  get '/orders/:id', to: 'items#index', as: 'index'
-  post '/orders/:id', to:'items#new', as: 'newItem'
+  get '/orders/:id/items', to: 'items#index'
+  get '/orders/:id/items/new', to: 'items#new'
+  post '/orders/:id/items', to: 'items#create', as: 'newItem'
 
 end

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
     def index
+        @orders = Order.where(user_id: current_user.id)
     end
     
     def new
@@ -12,9 +13,10 @@ class OrdersController < ApplicationController
         @order.order_status = "Waiting"
         @order.user_id = current_user.id
         if (@order.save)
-          render 'new'
+            @orders = Order.where(user_id: current_user.id)
+            render 'index'
         else
-          render 'new'
+            render 'new'
         end
     end
 
