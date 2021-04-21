@@ -98,3 +98,4 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap', '~> 4.4.1'
 
 gem 'mini_racer'
+gem 'sendgrid-ruby'
