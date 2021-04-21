@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :order_user
-  has_many :users, through: :order_user 
+  has_and_belongs_to_many :users
   has_many :items
 
   enum meal_type: [ :Breakfast, :Lunch, :Dinner ]

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
     def index
-        @orders = Order.where(user_id: current_user.id)
+        @orders = Order.where(user_id: current_user.id, order_status: 0)
     end
     
     def new
@@ -10,10 +10,10 @@ class OrdersController < ApplicationController
     def create
         @order_params = params.require(:newOrder).permit(:meal_type, :restaurant_name, :restaurant_menu)
         @order = Order.new(@order_params)
-        @order.order_status = "Waiting"
+        @order.order_status = 0
         @order.user_id = current_user.id
         if (@order.save)
-            @orders = Order.where(user_id: current_user.id)
+            @orders = Order.where(user_id: current_user.id, order_status: 0)
             render 'index'
         else
             render 'new'
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     def cancel
         @order_id = params[:id]
         @order = Order.find(id = @order_id)
-        @order.status = "Cancelled"
+        @order.order_status = 2
         @order.save
         redirect_to orders_path
     end
@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     def finish
         @order_id = params[:id]
         @order = Order.find(id = @order_id)
-        @order.status = "Finished"
+        @order.order_status = 1
         @order.save
         redirect_to orders_path
     end

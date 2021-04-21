@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/orders", to: "orders#index"
   get '/orders/new', to: 'orders#new'
   post '/orders', to: 'orders#create', as: 'newOrder'
-  post '/orders/:id/cancel', to: 'orders#cancel', as: 'cancelOrder'
-  post '/orders/:id/finish', to: 'orders#finish', as: 'finishOrder'
+  get '/orders/:id/cancel', to: 'orders#cancel', as: 'cancelOrder'
+  get '/orders/:id/finish', to: 'orders#finish', as: 'finishOrder'
 
   get '/orders/:id/items', to: 'items#index'
   get '/orders/:id/items/new', to: 'items#new'
