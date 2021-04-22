@@ -6,6 +6,7 @@ class CreateNotifications < ActiveRecord::Migration[6.1]
       t.datetime :read_at
       t.string :action
       t.string :model
+      t.integer :category
       #t.references :notifiable, polymorphic: true
 
       t.timestamps

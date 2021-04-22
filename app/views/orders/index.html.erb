@@ -12,9 +12,9 @@
   </thead>
   <% @orders.each do |order| %>
   <tr>
-    <td><a href="/orders/<%=order.id%>/items"><%= order.user_id %></a></td>
-    <td><a href="/orders/<%=order.id%>/items"><%= order.meal_type %></a></td>
-    <td><a href="/orders/<%=order.id%>/items"><%= order.restaurant_name %></a></td>
+    <td><a href="/orders/<%=order.id%>"><%= order.user_id %></a></td>
+    <td><a href="/orders/<%=order.id%>"><%= order.meal_type %></a></td>
+    <td><a href="/orders/<%=order.id%>"><%= order.restaurant_name %></a></td>
     <td><%= link_to "View", viewOrder_path(order) , class: "btn btn-info btn-sm", method: :get %>
         <%= link_to "Finish", finishOrder_path(order) , class: "btn btn-success btn-sm", method: :get %>
         <%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %>
