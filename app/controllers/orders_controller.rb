@@ -7,6 +7,11 @@ class OrdersController < ApplicationController
         @order = Order.new
     end
 
+    def show
+        @order = Order.where(id: params[:id]).first
+        @items = Item.where(order: params[:id])
+    end
+
     def create
         @order_params = params.require(:newOrder).permit(:meal_type, :restaurant_name, :restaurant_menu)
         @order = Order.new(@order_params)
