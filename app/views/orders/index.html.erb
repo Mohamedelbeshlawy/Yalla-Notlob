@@ -1,0 +1,28 @@
+<div class="mt-0">
+  <h1 class="text-center fw-bold">Orders</h1>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Meal</th>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><a href="/orders/<%=order.id%>/items"><%= order.user_id %></a></td>
+    <td><a href="/orders/<%=order.id%>/items"><%= order.meal_type %></a></td>
+    <td><a href="/orders/<%=order.id%>/items"><%= order.restaurant_name %></a></td>
+    <td><%= link_to "View", viewOrder_path(order) , class: "btn btn-info btn-sm", method: :get %>
+        <%= link_to "Finish", finishOrder_path(order) , class: "btn btn-success btn-sm", method: :get %>
+        <%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %>
+    </td>
+  </tr>
+  <%end%>
+  </thead>
+</table>
+<div class="col-md-4" style="margin: 10px;">
+    <%= link_to "Start New Order", "/orders/new" , class: "btn btn-primary"%>
+</div>

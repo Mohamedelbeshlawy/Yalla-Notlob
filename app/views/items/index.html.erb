@@ -1,0 +1,30 @@
+<h1>Order details</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>Person</th>
+    <th>Item</th>
+    <th>Amount</th>
+    <th>Price</th>
+    <th>Comment</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.user_id %></td>
+      <td><%= item.name %></td>
+      <td><%= item.amount %></td>
+      <td><%= item.price %></td>
+      <td><%= item.comment %></td>
+      <td><%= link_to "Delete", deleteItem_path(@order, item) , class: "btn btn-danger btn-sm", method: :get %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<div class="col-md-4" style="margin: 10px;">
+    <a href="/orders/<%=@order.id%>/items/new">Add Item</a>
+</div>
+
+
