@@ -7,8 +7,7 @@
       <th scope="col">User</th>
       <th scope="col">Meal</th>
       <th scope="col">Restaurant</th>
-      <th scope="col">Cancel Order</th>
-      <th scope="col">Finish Order</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <% @orders.each do |order| %>
@@ -16,8 +15,10 @@
     <td><a href="/orders/<%=order.id%>/items"><%= order.user_id %></a></td>
     <td><a href="/orders/<%=order.id%>/items"><%= order.meal_type %></a></td>
     <td><a href="/orders/<%=order.id%>/items"><%= order.restaurant_name %></a></td>
-    <td><%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %></td>
-    <td><%= link_to "Finish", finishOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %></td>
+    <td><%= link_to "View", viewOrder_path(order) , class: "btn btn-info btn-sm", method: :get %>
+        <%= link_to "Finish", finishOrder_path(order) , class: "btn btn-success btn-sm", method: :get %>
+        <%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %>
+    </td>
   </tr>
   <%end%>
   </thead>

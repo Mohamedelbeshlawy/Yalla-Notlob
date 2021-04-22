@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/orders", to: "orders#index"
   get '/orders/new', to: 'orders#new'
   post '/orders', to: 'orders#create', as: 'newOrder'
-  get '/orders/:id/show', to: 'orders#show'
+  get '/orders/:id/show', to: 'orders#show', as: 'viewOrder'
   get '/orders/:id/cancel', to: 'orders#cancel', as: 'cancelOrder'
   get '/orders/:id/finish', to: 'orders#finish', as: 'finishOrder'
 
