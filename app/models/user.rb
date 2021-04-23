@@ -9,6 +9,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :friendships
-  has_many :order_user
-  has_many :orders, through: :order_user
+  has_many :items
+  has_many :orders
+
+  has_and_belongs_to_many :orders
 end

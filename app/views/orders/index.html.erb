@@ -1,21 +1,28 @@
-<div class="container flex-grow-1">
-    <div class="mt-0">
-        <h1 class="text-center fw-bold">Orders</h1>
-    </div>
-     <table class="table table-dark">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Order</th>
-            <th scope="col">Resturant</th>
-            <th scope="col">Invited</th>
-            <th scope="col">Joined</th>
-            <th scope="col">Status</th>
-            <th scope="col" colspan="3">Actions</th>
-        </tr>
-        </thead>
-    </table>
-    <div class="col-md-4" style="margin: 10px;">
-        <%= link_to "Start New Order", "/orders/new" , class: "btn btn-primary"%>
-    </div>
+<div class="mt-0">
+  <h1 class="text-center fw-bold">Orders</h1>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Meal</th>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><a href="/orders/<%=order.id%>"><%= order.user_id %></a></td>
+    <td><a href="/orders/<%=order.id%>"><%= order.meal_type %></a></td>
+    <td><a href="/orders/<%=order.id%>"><%= order.restaurant_name %></a></td>
+    <td><%= link_to "View", viewOrder_path(order) , class: "btn btn-info btn-sm", method: :get %>
+        <%= link_to "Finish", finishOrder_path(order) , class: "btn btn-success btn-sm", method: :get %>
+        <%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %>
+    </td>
+  </tr>
+  <%end%>
+  </thead>
+</table>
+<div class="col-md-4" style="margin: 10px;">
+    <%= link_to "Start New Order", "/orders/new" , class: "btn btn-primary"%>
 </div>
