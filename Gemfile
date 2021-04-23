@@ -97,3 +97,4 @@ gem 'turbolinks', '~> 5'
 gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'mini_racer'
+gem 'sendgrid-ruby'
