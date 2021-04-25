@@ -23,7 +23,6 @@ class GroupsUsersController < ApplicationController
       redirect_to group_url(:id => params[:group_id])
     end
   
-    # render :template => 'groups/show'
   
   
     def destroy
