@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag groups_path do |form| %>
+        <div class="active-purple-4 mb-4 d-flex">
+          <%= text_field_tag(:name, nil, placeholder: "Group name", class: "form-control mx-2") %>
+          <%= submit_tag "Create", class: "btn btn-dark" %>
+        </div>
+
+      <% end %>
+    </div>
+    <div class="col-12 col-md-5 col-lg-5 mt-5">
+      <table class="table table-dark">
+        <thead>
+    <tr>
+    <td colspan="2">My Groups</td>
+    </tr>
+  </thead>
+
+        <!-- Show error msgs -->
+    <% if flash[:group_errors]%>
+        <div class="alert alert-danger">
+            <% flash[:group_errors].each do |msg|%>
+            <li>
+                <%= msg %>
+            </li>
+            <% end %>
+        </div>
+    <% end %>
+    <% if flash[:group_error]%>
+        <div class="alert alert-danger">
+            <li>
+                <%= flash[:group_error] %>
+            </li>
+        </div>
+    <% end %>
+        <% unless @groups.nil? %>
+            <tbody>
+            <% @groups.each do |group| %>
+              <tr>
+                <td><%= group.name %></td>
+                <td><%= link_to 'Edit Group', group_path(group), class: "btn btn-primary" %></td>
+                <td><%= link_to 'Delete Group', group_path(group), class: "btn btn-primary", method: :delete,
+                                data: {confirm: 'Are you sure?'} %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
