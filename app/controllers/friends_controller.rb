@@ -8,11 +8,7 @@ class FriendsController < ApplicationController
     end
   end
 
-  def new
-    @new_friendship = current_user.friendship.new()
-    @errors = Array.new
-
-  end
+  
 
   def create
     @errors = Array.new
