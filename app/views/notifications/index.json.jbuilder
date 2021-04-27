@@ -6,6 +6,5 @@ json.array! @notifications do |notification|
   json.category notification.category
   json.created_at notification.created_at
   json.updated_at notification.updated_at
-
-  #json.notifiable notification.notifiable
+  # json.notifiable notification.notifiable
 end
