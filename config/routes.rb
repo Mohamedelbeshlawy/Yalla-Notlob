@@ -28,6 +28,11 @@ Rails.application.routes.draw do
   get '/orders/:id/cancel', to: 'orders#cancel', as: 'cancelOrder'
   get '/orders/:id/finish', to: 'orders#finish', as: 'finishOrder'
 
+  get '/orders/invite/:id' => 'orders#inviteFriends', as: 'inviteFriends'
+  post '/orders/invite/:id' => 'orders#invite', as: 'invite'
+  post '/orders/inviteGroup/:id' => 'orders#inviteGroup', as: 'inviteGroup'
+  delete '/orders/invite/:id' => 'orders#cancel', as: 'cancel'
+
   get '/orders/:id/items/new', to: 'items#new'
    
   post '/orders/:id/', to: 'items#create', as: 'newItem'
