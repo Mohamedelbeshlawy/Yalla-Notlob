@@ -18,7 +18,6 @@ class FriendsController < ApplicationController
     @errors = Array.new
     @email = params["email-invite"]
     @delete_id = params["unfriend-btn"]
-
     @new_friend = User.where(:email => @email).first
     if (params["email-invite"] === "" or @new_friend.nil?) and @delete_id.nil?
       # TODO show error messages
