@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
     @order.order_status = 0
     @order.user_id = current_user.id
     if @order.save
+      @invites = Invitation.where(user_id: current_user.id)
       @orders = Order.where(user_id: current_user.id, order_status: 0)
       render 'index'
     else

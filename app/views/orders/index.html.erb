@@ -8,6 +8,7 @@
       <th scope="col">Meal</th>
       <th scope="col">Restaurant</th>
       <th scope="col">Joined</th>
+      <th scope="col">Invited</th>
       <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
@@ -19,7 +20,7 @@
     <td><a href="/orders/<%=order.id%>"><%= order.restaurant_name %></a></td>
     <td><%= @invites.count {|invite| invite.order_id == order.id } %></td>
     <td><%= @invites.count {|invite| (invite.order_id == order.id && invite.joined == true)} %></td>
-    <td><%= order.status %></td>
+    <td><%= order.order_status %></td>
     <td><%= link_to "View", viewOrder_path(order) , class: "btn btn-info btn-sm", method: :get %></td>
     <td><%= link_to "Finish", finishOrder_path(order) , class: "btn btn-success btn-sm", method: :get %></td>
     <td><%= link_to "Cancel", cancelOrder_path(order) , class: "btn btn-danger btn-sm", method: :get %></td>
