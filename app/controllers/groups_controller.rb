@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     @groups = Group.where(creator: current_user.id)
     @group = Group.find_by(id: params[:id], creator: current_user.id)
     if @group.nil?
-      flash[:group_error] = "No Group exists with this id"
+      flash[:group_error] = "This id is not matching with any Friends "
       redirect_to :groups
     else
       @group_members = @group.users.all
