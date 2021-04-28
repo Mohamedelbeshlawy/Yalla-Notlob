@@ -1,24 +1,57 @@
-# README
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
-Things you may want to cover:
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-* Ruby version
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
-* System dependencies
+Yalla Notlob website using Rails , This project implementation made by by students from ITI-Intake 41-open source Cloud platform development track.
 
-* Configuration
 
-* Database creation
+Features 
 
-* Database initialization
+-  User login, registrations and confirmation
 
-* How to run the test suite
+- Add friends 
 
-* Services (job queues, cache servers, search engines, etc.)
+- Create groups and add friends in the groups
 
-* Deployment instructions
+- Make orders and invite friends to the order
 
-* ...
+- Get notifications with Accaptance of adding friends 
+
+
+
+
+
+
+Getting Started
+
+
+1 - Run: git clone https://github.com/Mohamedelbeshlawy/Yalla-Notlob.git
+
+2 - Run: cd Yalla-Notlob
+
+3 - Run: bundle install
+
+4 - Run: rails db:create
+
+5 - Run: rails db:migrate
+
+6 - Run: rails s 
+
+7 - visit localhost:3000
+
+
+Authors :
+
+   Mohamed Elbeshlaway
+
+   Ahmed Ibrahim
+
+   Islam Reda
+
+   Nagy Adel
+
+   Wesal Eldsokey 

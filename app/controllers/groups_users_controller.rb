@@ -16,7 +16,7 @@ class GroupsUsersController < ApplicationController
             flash[:group_member_errors] = ["User isn't a friend"]
           end
         else
-          flash[:group_member_errors] = ["User already exist in the group"]
+          flash[:group_member_errors] = ["User exist in the group"]
         end
       end
       redirect_to group_url(:id => params[:group_id])
@@ -30,8 +30,6 @@ class GroupsUsersController < ApplicationController
       @group.users.delete @group_member
       redirect_back(fallback_location: root_path)
     end
-  
-  
   end
   
 end
