@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(version: 2021_04_24_002120) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "provider"
+    t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
