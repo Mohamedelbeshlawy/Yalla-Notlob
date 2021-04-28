@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
-         :omniauthable, omniauth_providers: %i[facebook]
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   has_and_belongs_to_many :groups
   has_many :friendships
@@ -16,6 +16,12 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  def self.from_omniauth(auth)
+    where(provider: auth[:provider], uid: auth[:uid]).first_or_create do |user|
+      user.name = auth[:info][:name]
+      user.email = auth[:info][:email]
+    end
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
