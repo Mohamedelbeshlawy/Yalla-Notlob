@@ -9,7 +9,9 @@ class HomeController < ApplicationController
         @orders_from_invitations.append(Order.where(id: invite.order_id).first)
       end
   
-      
+      orders.each do |order|
+        @orders_from_invitations.append(order)
+      end
       @orders_from_invitations = @orders_from_invitations[0..4]
     end
   
