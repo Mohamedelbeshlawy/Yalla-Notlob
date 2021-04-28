@@ -3,12 +3,12 @@
 <table class="table">
   <thead class="thead-dark">
   <tr>
-    <th>Person</th>
-    <th>Item</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Comment</th>
-    <th>Delete</th>
+    <th>Person </th>
+    <th>Item </th>
+    <th>Amount </th>
+    <th>Price </th>
+    <th>Comment </th>
+    <th>Delete </th>
   </tr>
   </thead>
   <% @items.each do |item| %>
@@ -23,6 +23,7 @@
   <% end %>
 </table>
 <br>
+
 <div class="col-md-4" style="margin: 10px;">
     <a href="/orders/<%=@order.id%>/items/new">Add Item</a>
 </div>

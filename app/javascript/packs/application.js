@@ -10,6 +10,13 @@ import "channels"
 import 'bootstrap'
 import './src/application.scss'
 
+
+require("custom/notifications")
+
+
+import "@fortawesome/fontawesome-free/js/all";
+import "jquery"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
