@@ -1,10 +1,4 @@
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-
-[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
-
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-
-[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
 Yalla Notlob website using Rails , This project implementation made by by students from ITI-Intake 41-open source Cloud platform development track.
 
@@ -12,7 +6,6 @@ Yalla Notlob website using Rails , This project implementation made by by studen
 
 ---
 
-<!-- TOC -->
 
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -20,7 +13,6 @@ Yalla Notlob website using Rails , This project implementation made by by studen
    - [Using Docker](#using-docker)
 - [Dependencies](#dependencies)
 - [About Us](#Authors)
-<!-- /TOC -->
 
 ## Features
 
