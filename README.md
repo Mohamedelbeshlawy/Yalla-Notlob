@@ -8,16 +8,31 @@
 
 Yalla Notlob website using Rails , This project implementation made by by students from ITI-Intake 41-open source Cloud platform development track.
 
+## Table of Contents
 
-Features 
+---
+
+<!-- TOC -->
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+   - [Setup Your Environment](#setup-your-environment)
+   - [Using Docker](#using-docker)
+- [Dependencies](#dependencies)
+- [About Us](#Authors)
+<!-- /TOC -->
+
+## Features
+
+---
 
 -  User login, registrations and confirmation
 
-- Add friends 
+- Add friends by their emails.
 
-- Create groups and add friends in the groups
+- Create group of your favorite friends, so that it's easier for you to invite them by using the group's name.
 
-- Make orders and invite friends to the order
+- Make orders and ability to invite your friends to your order, so they can participate and include their items.
 
 - Get notifications with Accaptance of adding friends 
 
@@ -26,32 +41,83 @@ Features
 
 
 
-Getting Started
+## Getting Started
 
+---
+To use and run this project you need to:
 
-1 - Run: git clone https://github.com/Mohamedelbeshlawy/Yalla-Notlob.git
+#### Setup Your Environment
 
-2 - Run: cd Yalla-Notlob
+1. Run the following command to clone: 
+```
+git clone https://github.com/Mohamedelbeshlawy/Yalla-Notlob.git
+```
+2. Run the following command to install all the required gems.
 
-3 - Run: bundle install
+```bash
+bundle install
+```
+3. Setup the database (mysql in this case).
 
-4 - Run: rails db:create
+```bash
+rails db:create
+```
+```bash
+rails db:migrate
+```
 
-5 - Run: rails db:migrate
+4. To run the server 
+```bash
+rails s
+```
+5. Finally visit localhost:3000
 
-6 - Run: rails s 
+##### Note:
 
-7 - visit localhost:3000
+Make sure that your database is up and configured properly for the application to work.
 
+#### Using Docker
 
-Authors :
+---
 
-   Mohamed Elbeshlaway
+You can also use the docker image provided to setup a running environment
+for the application to avoid any environment conflicts.
 
-   Ahmed Ibrahim
+Change your working directory to the projects folder and execute the following commands (only one time)
 
-   Islam Reda
+```bash
+docker-compose build
+```
 
-   Nagy Adel
+to build the image and then
 
-   Wesal Eldsokey 
+```bash
+docker-compose run app rails db:create db:migrate
+```
+
+to setup the database.
+
+Whenever you want to run the server through the container run the following
+in the project's directory.
+
+```bash
+docker-compose up
+```
+
+## Dependencies
+
+---
+
+- [Ruby 3.0.0](https://www.ruby-lang.org/en/)
+
+## Authors :
+
+1. Mohamed Elbeshlaway
+
+2. Ahmed Ibrahim
+
+3. Islam Reda
+
+4. Nagy Adel
+
+5. Wesal Eldsokey 
