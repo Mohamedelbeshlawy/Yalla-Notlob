@@ -37,3 +37,5 @@ yarn-debug.log*
 sendgrid.env
 /install_nvm.sh
 /node_modules/
+
+/.env
