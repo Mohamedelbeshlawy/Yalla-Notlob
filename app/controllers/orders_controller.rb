@@ -4,7 +4,10 @@ class OrdersController < ApplicationController
     @invites = Invitation.where(user_id: current_user.id)
     @orders_from_invitations = []
     @invites.each do |invite|
-      @orders_from_invitations.append(Order.where(id: invite.order_id).first)
+      order = Order.find_by(id: invite.order_id, order_status: 0)
+      if order
+        @orders_from_invitations.append(order)
+      end
     end
 
     @orders.each do |order|
@@ -38,17 +41,25 @@ class OrdersController < ApplicationController
   def cancel
     @order_id = params[:id]
     @order = Order.find(id = @order_id)
-    @order.order_status = 2
-    @order.save
-    redirect_to orders_path
+    if @order.user_id == current_user.id
+      @order.order_status = 2
+      @order.save
+      redirect_to orders_path
+    else
+      redirect_to orders_path
+    end
   end
 
   def finish
     @order_id = params[:id]
     @order = Order.find(id = @order_id)
-    @order.order_status = 1
-    @order.save
-    redirect_to orders_path
+    if @order.user_id == current_user.id
+      @order.order_status = 1
+      @order.save
+      redirect_to orders_path
+    else
+      redirect_to orders_path
+    end
   end
 
   def inviteFriends

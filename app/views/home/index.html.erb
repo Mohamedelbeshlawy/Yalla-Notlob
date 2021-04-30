@@ -3,7 +3,10 @@
     <div class="card bg-dark text-white">
     <h5 class="card-header">Latest orders</h5>
       <div class="card-body">
-        
+        <% @orders_from_invitations.each do |order| %>
+          <p class="card-text">
+            <a class="btn btn-primary" href=<%= viewOrder_path(order) %> ><%= order.meal_type %></a>&nbsp;&nbsp;&nbsp;<%= order.restaurant_name %></p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -12,7 +15,9 @@
 
      <h5 class="card-header">Friends activity</h5>
       <div class="card-body">
-
+          <%#= @friends.each do |friend| %>
+<!--            <p class="card-text"><%#= friend.id %></p>-->
+          <%# end %>
       </div>
 
 
