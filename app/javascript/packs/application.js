@@ -8,7 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
+import "jquery"
 import './src/application.scss'
+import "@fortawesome/fontawesome-free/js/all";
+
+require("custom/notifications")
 
 Rails.start()
 Turbolinks.start()
