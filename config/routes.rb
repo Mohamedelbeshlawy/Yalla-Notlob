@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users,  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
   resources :friends
   resources :orders
   resources :groups
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
       post :mark_as_read
     end
   end
-  
 
   get "/orders", to: "orders#index"
   get '/orders/new', to: 'orders#new'

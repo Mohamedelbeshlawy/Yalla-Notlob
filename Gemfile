@@ -59,3 +59,9 @@ gem 'figaro'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+
+# Fixing authentication error
+gem "omniauth-rails_csrf_protection"
+
+# Used for providing /admin route
+gem 'rails_admin', '~> 2.0'
