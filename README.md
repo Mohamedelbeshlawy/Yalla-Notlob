@@ -100,16 +100,16 @@ docker-compose up
 
 ---
 
-- [Ruby 3.0.0](https://www.ruby-lang.org/en/)
+- [Ruby 2.7.2](https://www.ruby-lang.org/en/)
 
 ## Authors :
 
-1. Mohamed Elbeshlaway
+1. [Mohamed Elbeshlaway](https://github.com/Mohamedelbeshlawy)
 
-2. Ahmed Ibrahim
+2. [Ahmed Ibrahim](https://github.com/ahmedibrahim22)
 
-3. Islam Reda
+3. [Islam Reda](https://github.com/IslamReda)
 
-4. Nagy Adel
+4. [Nagy Adel](https://github.com/nagyadel1992)
 
-5. Wesal Eldsokey 
+5. [Wesal Eldsokey](https://github.com/wesalEldsokey) 
